@@ -1,6 +1,8 @@
 # Thí nghiệm Tìm Giá Trị CUTOFF Tối Ưu Cho Mergesort
+* **Họ và tên:** Nguyễn Hoàng Linh
+* **Mã SV:** 25021845
 
-Đây là kho lưu trữ (repository) chứa mã nguồn, dữ liệu và báo cáo cho bài tập lớn/thí nghiệm giữa kỳ môn **Cấu trúc dữ liệu và giải thuật**. Mục tiêu của project là cài đặt thuật toán Mergesort bám sát nội dung bài giảng và thực nghiệm đo đạc thời gian chạy để tìm ra ngưỡng `CUTOFF` (chuyển sang Insertion Sort) tối ưu nhất cho cấu hình máy tính hiện tại.
+Đây là repository chứa mã nguồn, dữ liệu và báo cáo cho project thí nghiệm giữa kỳ môn **Cấu trúc dữ liệu và giải thuật**. Mục tiêu của project là cài đặt thuật toán Mergesort bám sát nội dung bài giảng và thực nghiệm đo đạc thời gian chạy để tìm ra ngưỡng `CUTOFF` (chuyển sang Insertion Sort) tối ưu nhất cho cấu hình máy tính hiện tại.
 
 ## 📂 Cấu trúc Repository
 
@@ -14,20 +16,13 @@ Dưới đây là danh sách và mô tả chi tiết các file có trong kho lư
 ### 💻 Mã nguồn và Phân tích (Notebook)
 * **`result.ipynb`**: File Jupyter Notebook chứa toàn bộ mã nguồn Python cài đặt Mergesort (dịch chuẩn từ mã giả Java trong bài giảng), hàm sinh dữ liệu test, script đo đạc thời gian và logic vẽ biểu đồ.
 * **`result.html`**: Phiên bản xuất ra HTML của file `result.ipynb`, giúp người xem có thể đọc trực tiếp code và kết quả hiển thị trên trình duyệt mà không cần cài đặt môi trường Jupyter.
-* **`src/`**: Thư mục chứa các mã nguồn phụ trợ (nếu có).
+* **`src/`**: Thư mục chứa các mã nguồn phụ trợ, bao gồm 
+  - Insertion.java: Mã nguồn thuật toán sắp xếp Insertion Sort.
+  - InsertionCutoff.java: Mã nguồn thuật toán sắp xếp Insertion Sort cho mảng con khi sử dụng với giá trị CUTOFF nhất định.
+  - Merge.java: Mã nguồn thuật toán sắp xếp Merge Sort.
+  - MergeCutoff.java: Mã nguồn thuật toán sắp xếp Merge Sort với tham số CUTOFF động
+  - Experiment.java: Mã nguồn bộ sinh dữ liệu và Script chạy thí nghiệm
 
 ### 📊 Dữ liệu Thí nghiệm
 * **`datasets.txt`**: Tập dữ liệu (bộ test) chứa các mảng số nguyên ngẫu nhiên với các kích thước $N$ khác nhau, được sử dụng làm đầu vào thống nhất để đảm bảo tính công bằng khi so sánh hiệu năng giữa các cấu hình `CUTOFF`.
-* **`results.csv`**: File dữ liệu đầu ra dạng bảng (CSV), lưu trữ chi tiết kết quả đo thời gian chạy (tính bằng giây) tương ứng với từng kích thước đầu vào $N$ và giá trị `CUTOFF`.
-
-## 🚀 Hướng dẫn sử dụng
-
-1. **Xem báo cáo nhanh:** Bạn có thể mở trực tiếp file `Báo Cáo Kết Quả.pdf` hoặc `result.html` ngay trên trình duyệt của GitHub để xem toàn bộ nội dung phân tích và code.
-2. **Chạy lại thí nghiệm:** 
-   * Clone repository này về máy.
-   * Đảm bảo máy tính đã cài đặt Python, Jupyter Notebook và các thư viện cần thiết (`pandas`, `plotnine`).
-   * Mở file `result.ipynb` bằng Jupyter Notebook hoặc VS Code và chạy (Run) toàn bộ các cell để sinh lại dữ liệu, thực hiện đo thời gian và vẽ lại biểu đồ `cutoff_analysis.png`.
-
-## 📝 Tác giả
-* **Họ và tên:** [Điền tên của bạn vào đây]
-* **Mã SV:** [Điền mã sinh viên vào đây]
+* **`results.csv`**: File dữ liệu đầu ra dạng bảng (CSV), lưu trữ chi tiết kết quả đo thời gian chạy (tính bằng mili-giây) tương ứng với từng kích thước đầu vào $N$ và giá trị `CUTOFF`.
